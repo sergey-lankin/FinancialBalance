@@ -6,3 +6,4 @@
 Ниже приведен снимок экрана схемы базы данных.
 
 ![Alt text](/initial_db_diag.png?raw=true "Database diagram")
+В файле dump-balanceDB-v01.sql находится резервная копия базы данных.
