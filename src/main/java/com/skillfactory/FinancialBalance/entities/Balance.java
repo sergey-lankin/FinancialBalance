@@ -1,9 +1,7 @@
 package com.skillfactory.FinancialBalance.entities;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
-
 @Entity
 @Table(name = "BALANCE")
 @Data
