@@ -3,6 +3,7 @@ package com.skillfactory.FinancialBalance.entities;
 import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.Data;
+
 import java.util.Date;
 @Entity
 @Table(name = "OPERATIONS")
@@ -20,4 +21,6 @@ public class Operation {
     private @SerializedName(value = "operationTime") Date operationTime;
     @Column(name = "MONEY_AMOUNT")
     private @SerializedName(value = "moneyAmount") Float moneyAmount;
+    @Column(name = "BENEFICIARY_ID")
+    private @SerializedName(value = "beneficiaryId") Long beneficiaryId;
 }

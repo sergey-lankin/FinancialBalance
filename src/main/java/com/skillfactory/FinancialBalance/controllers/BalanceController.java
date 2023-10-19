@@ -18,16 +18,22 @@ public class BalanceController {
     }
     @PostMapping("/users/{userId}/putMoney")
     public String putMoney(@PathVariable Long userId, @RequestBody JSONObject userProperties) {
-        String moneyAmountStr = (String) userProperties.get("moneyAmount");
-        Float moneyAmount = Float.parseFloat(moneyAmountStr);
+        Float moneyAmount = Float.parseFloat(String.valueOf(userProperties.get("moneyAmount")));
         return balanceService.putMoney(userId, moneyAmount);
     }
     @PostMapping("/users/{userId}/takeMoney")
     public String takeMoney(@PathVariable Long userId, @RequestBody JSONObject userProperties) {
-        String moneyAmountStr = (String) userProperties.get("moneyAmount");
-        Float moneyAmount = Float.parseFloat(moneyAmountStr);
+        Float moneyAmount = Float.parseFloat(String.valueOf(userProperties.get("moneyAmount")));
         return balanceService.takeMoney(userId, moneyAmount);
     }
+
+    @PostMapping("/users/{userId}/transferMoney")
+    public String transferMoney(@PathVariable Long userId, @RequestBody JSONObject userProperties) {
+        Float moneyAmount = Float.parseFloat(String.valueOf(userProperties.get("moneyAmount")));
+        Long beneficiaryId = Long.parseLong(String.valueOf(userProperties.get("beneficiaryId")));
+        return balanceService.transferMoney(userId, beneficiaryId, moneyAmount);
+    }
+
     @GetMapping("/users/getOperationList")
     public String takeMoney(@RequestParam(value = "userId") Long userId,
                                      @RequestParam(value = "firstTime", required=false) String firstTime,
