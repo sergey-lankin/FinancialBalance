@@ -35,7 +35,7 @@ public class BalanceController {
     }
 
     @GetMapping("/users/getOperationList")
-    public String takeMoney(@RequestParam(value = "userId") Long userId,
+    public String getOperationList(@RequestParam(value = "userId") Long userId,
                                      @RequestParam(value = "firstTime", required=false) String firstTime,
                                      @RequestParam(value = "lastTime", required=false) String lastTime) {
         try{

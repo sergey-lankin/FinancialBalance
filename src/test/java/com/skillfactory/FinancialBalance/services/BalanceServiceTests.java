@@ -10,7 +10,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
-@Ignore
+//@Ignore
 
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
